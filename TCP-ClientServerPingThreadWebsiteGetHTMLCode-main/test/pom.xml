@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.shiro</groupId>
+    <artifactId>testing</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <exec.mainClass>com.shiro.test.Testing</exec.mainClass>
+    </properties>
+    <!-- papildomai aprašome manifest -->	
+<build>
+    <plugins>
+	<plugin>	
+        <groupId>org.apache.maven.plugins</groupId>	 
+	<artifactId>maven-jar-plugin</artifactId>
+	<version>3.2.0</version>
+            <configuration>
+		<archive>
+                    <manifest>
+			<addClasspath>true</addClasspath>		
+			<mainClass>com.shiro.test.Testing</mainClass>
+                    </manifest>
+		</archive>
+            </configuration>
+	</plugin>
+        <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                   <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                   <filesets>
+                        <fileset>
+                            <directory>target/classes</directory>
+                            <excludes>
+                                <exclude>**/*</exclude>
+                            </excludes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+    </plugins>
+</build>
+    <name>testing</name>
+    <repositories>
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
